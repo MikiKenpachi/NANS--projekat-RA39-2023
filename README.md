@@ -84,4 +84,4 @@ Pokretanje analize:
 jupyter notebook
 📝 Licenca
 
-Projekat je realizovan u svrhe akademskog istraživanja na Fakultetu tehničkih nauka.
+Projekat je realizovan u svrhe predmetnog zadatka na Fakultetu tehničkih nauka, u okviru predmeta Numerički algoritmi i numerički softver (NANS).
