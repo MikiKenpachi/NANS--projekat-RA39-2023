@@ -1,87 +1,65 @@
-📈 **Analiza i predikcija kratkoročnih logaritamskih prinosa S&P 500 indeksa**
+# 📈 Analysis and Prediction of S&P 500 Short-Term Log-Returns
 
-Ovaj projekat predstavlja sveobuhvatnu analizu i modelovanje vremenskih serija indeksa **S&P 500**, sa fokusom na **logaritamske prinose (log-returns)** umesto direktnog predviđanja cena.
+**Numerical Algorithms and Numerical Software (NANS) Course Project** *Faculty of Technical Sciences, University of Novi Sad*
 
-Log-prinosi su statistički pogodniji za modelovanje jer su bliži stacionarnosti i omogućavaju pouzdaniju procenu tržišnog rizika.
+---
 
-**Autor**: Miloš Trišić (RA39/2023)<br>
-**Predmet**: Numerički algoritmi i numerički softver (NANS)<br>
-**Fakultet**: Fakultet tehničkih nauka<br>
+## 📖 Project Overview
 
-📊 **Pregled projekta**
+This project presents a comprehensive study focused specifically on the **analysis and prediction of short-term logarithmic returns (log-returns)** of the **S&P 500** index. 
 
-Cilj rada je evaluacija različitih pristupa modelovanju i predikciji finansijskih kretanja:
+The core objective is to model the financial time series using statistical and machine learning methods. Log-returns are utilized instead of raw price data as they are more suitable for achieving stationarity and providing a robust evaluation of high-frequency market movements and volatility.
 
-**ARIMA** – linearno modelovanje i analiza autokorelacione strukture
+> **Note:** While this documentation is in English for portfolio purposes, the **Jupyter Notebook analysis and comments are written in Serbian**, in accordance with the university course requirements.
 
-**Facebook Prophet** – identifikacija trenda i sezonalnosti
+### 📊 Methodology & Models
+The study evaluates four distinct approaches to financial data:
+* **ARIMA** – Linear modeling and analysis of autocorrelation structures to capture returns.
+* **Facebook Prophet** – Non-linear modeling to identify underlying daily and weekly trends.
+* **GARCH** – Advanced volatility modeling to assess risk and volatility clustering.
+* **PCA Analysis** – Dimensionality reduction to understand the internal structure of market sectors.
 
-**GARCH** – modelovanje volatilnosti i procena tržišnog rizika
+---
 
-**PCA analiza** – razumevanje strukture tržišta i sektorskih doprinosa varijansi
+## 🛠️ Tech Stack & Libraries
 
-🛠 **Tehnologije i biblioteke**
+| Category | Tools |
+| :--- | :--- |
+| **Language** | Python 3.x |
+| **Data Processing** | `Pandas`, `NumPy` |
+| **Time Series** | `Statsmodels`, `pmdarima`, `Prophet`, `arch` |
+| **Machine Learning** | `Scikit-learn` (PCA) |
+| **Visualization** | `Matplotlib`, `Seaborn` |
 
-**Python 3.x**
+---
 
-**Pandas**, **NumPy** – obrada i manipulacija podataka
+## 📂 Project Structure
 
-**Statsmodels**, **pmdarima** – ARIMA modeli
+The repository is organized modularly to ensure clean code and easy maintenance:
 
-**Prophet** – nelinearno modelovanje
+* `notebook.ipynb` – **Main Entry:** Full analysis workflow and result interpretation (in Serbian).
+* `preprocessing.py` – Data ingestion and log-return transformation.
+* `stationarity.py` – Statistical testing (ADF test) and ACF/PACF analysis.
+* `arima_model.py` – ARIMA implementation with **Walk-Forward Validation**.
+* `prophet_model.py` – Non-linear trend forecasting using Facebook Prophet.
+* `garch_model.py` – Volatility clustering analysis.
+* `pca_analysis.py` – Principal Component Analysis of market sectors.
+* `evaluation.py` – Centralized performance metrics (**MAE**, **RMSE**, **MASE**).
 
-**arch** – GARCH modeli
+---
 
-**Scikit-learn** – PCA analiza
+## 📈 Key Insights & Conclusions
 
-**Matplotlib, Seaborn** – vizuelizacija
+* **Market Efficiency:** Log-returns exhibit properties close to white noise, confirming the high efficiency and unpredictability of short-term price movements.
+* **Volatility Clustering:** Successfully captured and modeled using a **GARCH(1,1)** approach, showing that "shocks" in the market tend to persist.
+* **Validation Integrity:** Used **Walk-Forward Validation** to eliminate *look-ahead bias*, strictly simulating real-world forecasting conditions.
+* **PCA Findings:** The first principal component (**PC1**) captures the broad market movement, while **PC2** effectively separates cyclical from defensive sectors.
 
-📂 **Struktura projekta**
+---
 
-Projekat je organizovan modularno radi preglednosti i lakšeg održavanja:
+## 👥 Author
+**Miloš Trišić** (RA 39/2023)  
+*Department of Computing and Control / Applied Computer Science and Informatics*
 
-notebook.ipynb – kompletan tok analize i interpretacija rezultata
-
-preprocessing.py – učitavanje podataka i izračunavanje log-prinosa
-
-stationarity.py – ADF test i ACF/PACF analiza
-
-arima_model.py – ARIMA sa walk-forward validacijom
-
-prophet_model.py – implementacija Prophet modela
-
-garch_model.py – modelovanje volatilnosti
-
-pca_analysis.py – analiza glavnih komponenti
-
-evaluation.py – centralizovane metrike (MAE, RMSE, MASE)
-
-📈 **Ključni rezultati i zaključci**
-
-**Efikasnost tržišta**: Log-prinosi su veoma bliski belom šumu, što ograničava linearnu predikciju.
-
-**Volatilnost**: Uočeno je klasterovanje volatilnosti, uspešno modelovano GARCH(1,1) modelom.
-
-**Walk-forward validacija**: Simulira realne uslove i eliminiše look-ahead bias.
-
-**MASE metrika**: Omogućava poređenje modela sa naivnim pristupom.
-
-**PCA analiza**: Prva glavna komponenta (PC1) predstavlja opšti tržišni faktor, dok PC2 razdvaja defanzivne i ciklične sektore.
-
-🚀 **Pokretanje projekta**
-
-Kloniranje repozitorijuma:
-
-git clone https://github.com/vas-username/sp500-analysis.git
-cd sp500-analysis
-
-Instalacija biblioteka:
-
-pip install pandas numpy statsmodels pmdarima prophet arch scikit-learn matplotlib seaborn
-
-Pokretanje analize:
-
-jupyter notebook
-📝 Licenca
-
-Projekat je realizovan u svrhe predmetnog zadatka na Fakultetu tehničkih nauka, u okviru predmeta Numerički algoritmi i numerički softver (NANS).
+## 📄 License
+This project was developed for educational purposes at the **Faculty of Technical Sciences (FTN)**.
